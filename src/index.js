@@ -4,11 +4,14 @@ import './index.css';
 import App from './App';
 import PropsPassApp from './PropsPassApp';
 import PropsGetApp from './PropsGetComp';
+import GoToFile from './gotoFile';
+import PropsNavigation from './PropsNavigation';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
+
 root.render(
   <React.StrictMode>
-    <PropsPassApp />
+    <PropsNavigation/>
   </React.StrictMode>
 );
 

@@ -1,41 +1,50 @@
 import React, { useState, useRef } from "react"
 import PropsGetComp from "./PropsGetComp";
-import { BrowserRouter, Navigate, useNavigate } from "react-router-dom";
+import GoToFile from "./gotoFile";
 
-const PropsPassComp = () => {
+const PropsPassApp = () => {
 
-    const [name, setName] = useState("hi");
-    const [clicked, setClicked] = useState(false);
+    const [name, setName] = useState("");
+    const [newName, setNewName] = useState();    
     const ref = useRef();
-   // const navigate = useNavigate();
 
     function handleSubmit (e) {
+        
         e.preventDefault();
         if(!name) return;
-
+        callUserName(name)
         setName('');
-     //   navigate("/App");
-       
     }
-/*
-    function passPropData (e)
-    {
-        
-        setClicked(true);
-       e.preventDefault();
-       <PropsGetComp captureData={name}></PropsGetComp>
+            
+    function callUserName(name) {
+        setNewName("Welcome " + name)
     }
-*/
+
     return (
         <>
-        <PropsGetComp name = {name}
+        <h1> SignIn </h1>
+
+        <PropsGetComp 
+            name = {name}
             setName = {setName}
-            handleSubmit = {handleSubmit} 
+            handleSubmit={handleSubmit}
         />
-        <h1> Welcome {name} </h1>
+        
+        {
+           (newName != null)
+            &&
+            <GoToFile 
+            newName={newName}
+            setNewName = {setNewName}
+            />
+         }
+     
+
+
+
         </>
 
 
     )
 }
-export default PropsPassComp;
+export default PropsPassApp;
