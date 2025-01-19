@@ -10,7 +10,7 @@ function GoToFile ({newName}) {
     <h1>{newName}</h1>
     <h2>Your Order Details</h2>
         
-        <p style="background-color:"blue"; font-size : 20>
+        <p style={{backgroundColor : "yellow", fontSize : "25px" }}>
             choco 1
             wafer 1 
             nuttoz 4
